@@ -1,0 +1,1 @@
+This repository contains a collection of scracth excersise used during coderdojo sessions in Tiel
