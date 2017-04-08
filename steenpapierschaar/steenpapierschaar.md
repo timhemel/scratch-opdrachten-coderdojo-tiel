@@ -57,7 +57,7 @@ Je kunt er ook op dubbelklikken, doe dit net zo lang totdat je een schuif ziet:
 
 ![Variabele met schuif](variabele-slider.png)
 
-met deze schuif kunnen we de variabele een bepaalde waarde geven. Dat is makkelijk als we willen testen of wat we doen werkt.
+Met deze schuif kunnen we de variabele een bepaalde waarde geven. Dat is makkelijk als we willen testen of wat we doen werkt.
 
 ## Testen
 
@@ -65,7 +65,7 @@ Testen is ontzettend belangrijk als je programmeert. Als je programmeert kun je
 fouten maken, zelfs als je supergoed oplet. Door vaak tussendoor te testen kun
 je snel zien of je een fout hebt gemaakt en de fout meteen oplossen. Hoe langer het duurt voor je een fout ontdekt, hoe moeilijker het is om de fout op te lossen.
 
-Oefening: waarom zou dit zo kunnen zijn?
+**Oefening:** waarom zou dit zo kunnen zijn?
 
 ## Het uiterlijk veranderen
 
@@ -89,7 +89,7 @@ waarde | uiterlijk
 
 Ik had ook andere waardes kunnen kiezen, bijvoorbeeld 1=papier,2=steen,3=schaar. Ik heb de volgorde gekozen waarin ik de sprites heb neergezet. We zullen straks zien dat dat voor ons het leven makkelijker maakt. Om de rest van deze scratch-les goed te volgen is het handig om dezelfde codering en zelfde volgorde van uiterlijken te kiezen.
 
-Oefening: pas de volgorde van de uiterlijken van de grote hand aan zodat deze hetzelfde is als in deze tekst.
+**Oefening:** pas de volgorde van de uiterlijken van de grote hand aan zodat deze hetzelfde is als in deze tekst.
 
 Laten we beginnen met een korte test. Als we op de sprite klikken, moet de sprite het uiterlijk krijgen van de variabele `keuze-speler`. We moeten ons eerste programma dus beginnen met de gebeurtenis "wanneer op deze sprite wordt geklikt".
 Dan klinkt het simpel: we kijken welke keuze in de variabele staat, is het de warde 1, dan selecteren we het uiterlijk schaar, bij 2 papier en bij 3 steen. Dat kunnen we doen met een paar als-dan blokjes:
@@ -130,9 +130,9 @@ Uiteraard moeten we even testen of het werkt. Dat doe je als volgt:
 
 De stappen hierboven noemen we een testcase (engels voor testgeval). Er zijn mensen die het testen van programma's als beroep hebben. Die heten dan Test-kees (grapje natuurlijk). Deze testers bedenken dan testcases en voeren ze uit.
 
-Oefening: voer de testcase uit en kijk of alles werkt.
+**Oefening:** voer de testcase uit en kijk of alles werkt.
 
-Oefening: wat gebeurt er als je de waarde van `keuze-speler` op iets anders zet
+**Oefening:** wat gebeurt er als je de waarde van `keuze-speler` op iets anders zet
 dan 1,2 of 3? Hoe komt dat?
 
 ## Kiezen met de knoppen
@@ -141,7 +141,7 @@ Als alles goed is gegaan, kun je nu de variabele `keuze-speler` aanpassen en het
 
 De knoppen maken is niet moeilijk: kies upload sprite, kies de juiste afbeelding (schaar, papier, steen) en klik op ok. Als bij jou hetzelfde gebeurt als bij mij, dan is de sprite veel te groot. Onder de tab 'Uiterlijken' kun je de afbeelding kleiner maken.
 
-Oefening: Maak de drie knoppen en zorg dat de afbeeldingen niet te groot zijn.
+**Oefening:** Maak de drie knoppen en zorg dat de afbeeldingen niet te groot zijn.
 
 Nu moeten we voor iedere knop een script maken.
 
@@ -151,7 +151,7 @@ Eigenlijk moet dit script hetzelfde doen wat we eerder met de schuif deden, name
 
 Uiteraard gaan we weer testen.
 
-Oefening: als we nu op de knop van schaar drukken, wat gebeurt er dan met:
+**Oefening:** als we nu op de knop van schaar drukken, wat gebeurt er dan met:
 1. de grote hand
 2. de variabele `keuze-speler`?
 
@@ -165,11 +165,11 @@ Het script van de grote hand moet hier op reageren:
 
 ![Script voor het veranderen van uiterlijk met signaal](script-grotehand-met-signaal.png)
 
-Oefening: maak de scripts voor alle knoppen en pas het script van de grote hand aan.
+**Oefening:** maak de scripts voor alle knoppen en pas het script van de grote hand aan.
 
 Je raadt het al, we hebben iets veranderd, dus moeten we testen!
 
-Oefening: test of de knoppen werken. Wat moet je allemaal controleren in deze test?
+**Oefening:** test of de knoppen werken. Wat moet je allemaal controleren in deze test?
 
 
 ## De computer laten kiezen
@@ -180,6 +180,46 @@ We moeten de computer dus laten kiezen nadat we zelf hebben gekozen. We kunnen n
 
 Het script om de computer te laten kiezen moeten we wel maken bij een bepaalde sprite. Ik heb ervoor gekozen om dit te doen bij de grote hand voor de computer. Deze sprite kunnen we het makkelijkst maken door de andere hand te kopieren.
 
+**Oefening:** kopieer de sprites van de hand van de speler (rechts klikken en dan 'kopie maken') en zorg dat alle uiterlijken gespiegeld zijn (hiervoor is een knop 'links-rechts omdraaien')
+
+Haal de scripts van de nieuwe sprite weg en maak een nieuw script. Begin met het blokje `wanneer ik signaal ... ontvang`. Selecteer in het blokje het signaal `spelerheeftgekozen`. Als het goed is wordt dit script geactiveerd als de speler op een van de knoppen heeft gedrukt. Laten we dat even testen. Voeg het blokje `zeg Hello! 2 sec.` toe. Als we nu op een van de knoppen drukken, zouden we de tekst "Hello!" moeten zien.
+
+TODO: image
+
+**Oefening:** Test of dit werkt.
+
+Nu moeten we de computer laten kiezen. Net als bij de speler moeten we de keuze van de computer ergens onthouden. Bij de speler hadden we hiervoor een variabele gemaakt. Dit gaan we ook doen voor de keuze van de computer.
+
+**Oefening:** Maak een variabele voor de keuze van de computer en noem deze `keuze-computer`. Doe dit net zoals bij de variabele `keuze-speler`. Als het goed is hebben we dan ook een slider voor de keuze van de computer.
+
+TODO: image
+
+Nu willen we ook hier het uiterlijk van het script aanpassen, volgens de waarde van de variabele `keuze-computer`. Dit hebben we al eens gedaan voor de keuze van de speler, dus we kunnen lekker makkelijk een stuk van dit script kopiëren.
+
+**Oefening:** Kopieer van de speler sprite het stuk script om het uiterlijk te veranderen. Wat moet je in dit script nog aanpassen?
+
+Goede programmeurs vinden het meestal niet verstandig om grote stukken programma te kopiëren. Als er namelijk iets moet worden aangepast moet je die aanpassingen ook doen in alle stukken waar je het hebt gekopiëerd! Dat is best veel werk en vervelend. In programmeertalen zijn er daarom manieren om een stuk programma meerdere keren te gebruiken, zonder dat je het hoeft te kopiëren. Dat houdt je programma overzichtelijk. Je kunt een goede programmeur herkennen aan korte programma's, maar die nog wel begrijpbaar zijn!
+
+Als je nu de slider van `keuze-computer` verandert, moet het script het juiste uiterlijk kiezen.
+
+**Oefening:** Test of dit zo is met de volgende waardes voor `keuze-computer`: 1,2,3.
+
+**Oefening:** Wat gebeurt er als `keuze-computer` een andere waarde heeft, zoals 0 of 4?
+
+TODO: zet de keuze in het script
+
+
+# De scheidsrechter
+
+Als de speler en de computer allebei hebben gekozen, kunnen we gaan kijken wie heeft gewonnen. Hiervoor maken we een sprite die we voor het gemak de scheidsrechter noemen.
+
+**Oefening:** maak een nieuwe sprite, bijvoorbeeld uit de bibliotheek.
+
+Ik heb als voorbeeld de kat gekozen uit de bibliotheek. Dit is niet helemaal volgens het ontwerp, maar soms gebeurt het dat je terwijl je bezig bent ontdekt dat iets makkelijker of leuker kan!
+
+Ik wil de kat laten zeggen wie er wint. Als de speler wint zegt de kat "speler wint", als de computer wint zegt de kat "computer wint" en bij gelijk spel zegt de kat "gelijk spel". We moeten het script van de kat starten wanneer zowel de speler als de computer hebben gekozen. Omdat de speler en de computer allebei een signaal sturen als ze hebben gekozen, kunnen we het script starten met het blokje "wanneer ik signaal ... ontvang".
+
+**Oefening:** op welk signaal moet het script reageren?
 
 
 # uitbreiding: hagedis en spock?
